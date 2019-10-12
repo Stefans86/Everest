@@ -720,7 +720,6 @@ public class DashboardController implements Initializable {
             but some moronic testers like me might obliterate their Ctrl + Tab key combo.
             While switching between tabs at such speeds that approach that of light,
             Everest might apply the state to some other tab.
-
             This may happen when a RequestManager that was handed over
             to a DashboardState were to change its state during a tab shift.
          */
@@ -784,10 +783,8 @@ public class DashboardController implements Initializable {
              The only value from a set of constants in the state.json file is the httpMethod
              which, if manipulated to a non-standard value by the user, would still
              be loaded into the httpMethodBox, causing severe errors while making requests.
-
              To prevent this, we check if it is a standard value (GET, POST, PUT, PATCH or DELETE) and
              only then proceed to applying the rest of the state values to the Dashboard.
-
              This is an extreme case, but still something to be taken care of.
          */
         boolean validMethod = false;
